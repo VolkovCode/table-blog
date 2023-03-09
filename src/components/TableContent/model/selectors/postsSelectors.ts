@@ -1,6 +1,7 @@
-import {StateSchema} from "../../../../store/StateSchema";
+import { StateSchema } from '../../../../store/StateSchema';
 
-
-export const getPostsIsLoading = (state: StateSchema) => state.posts?.isLoading || false;
-export const getPostsError = (state: StateSchema) => state.posts?.error;
 export const getPostsData = (state: StateSchema) => state.posts?.posts;
+export const getPostsSearch = (state: StateSchema) => state.posts?.search || '';
+export const getPostsCount = (state: StateSchema) => state.posts?.postsCount || 0;
+export const getPostsPage = (state: StateSchema) => state.posts?.page || 1;
+export const getPostsSortParams = (state: StateSchema) => state.posts?.sortParams;

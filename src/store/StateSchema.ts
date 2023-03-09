@@ -1,5 +1,5 @@
-import {PostsSchema} from "./types/postsSchema";
-import {AxiosInstance} from "axios";
+import { AxiosInstance } from 'axios';
+import { PostsSchema } from './types/postsSchema';
 
 export interface StateSchema {
     posts?: PostsSchema;

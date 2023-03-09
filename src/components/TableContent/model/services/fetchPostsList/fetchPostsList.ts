@@ -1,5 +1,5 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
-import {ThunkConfig} from "../../../../../store/StateSchema";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from '../../../../../store/StateSchema';
 
 export interface Post {
     userId: number,
@@ -13,19 +13,19 @@ export const fetchPostsList = createAsyncThunk<
     void,
     ThunkConfig<string>
     >(
-        'TableContent/fetchPostsList',
-    async (props, thunkApi) => {
-        const { extra, rejectWithValue} = thunkApi;
+      'TableContent/fetchPostsList',
+      async (props, thunkApi) => {
+        const { extra, rejectWithValue } = thunkApi;
 
         try {
-            const response = await extra.api.get<Post[]>('/posts')
-            console.log(response)
-            if (!response.data) {
-                throw new Error()
-            }
-            return response.data
+          const response = await extra.api.get<Post[]>('/posts');
+
+          if (!response.data) {
+            throw new Error();
+          }
+          return response.data;
         } catch (e) {
-            return rejectWithValue('error')
+          return rejectWithValue('error');
         }
-    }
-);
+      },
+    );
