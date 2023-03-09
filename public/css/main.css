@@ -173,3 +173,9 @@ td {
     font-weight: 500;
     text-decoration: none;
 }
+
+.next--disabled,
+.previous--disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+}

@@ -21,10 +21,19 @@ export const PaginationList = () => {
     dispatch(postsActions.setPage(Number(id)));
   }, [dispatch, id]);
 
+  const nextIsDisabled = pagesCount === currentPage
+  const previousIsDisabled = currentPage === 1
+
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
-        <li><Link className="previous" to={`/${prevPage}`}>Назад</Link></li>
+        <li>
+          <Link
+              className={previousIsDisabled ? "previous previous--disabled" : "previous"}
+              to={`/${prevPage}`}>
+            Назад
+          </Link>
+        </li>
         <ul className="pages-list">
           {pages.map((p) => (
             <li key={p}>
@@ -32,7 +41,14 @@ export const PaginationList = () => {
             </li>
           ))}
         </ul>
-        <li><Link className="next" to={`/${nextPage}`}>Далее</Link></li>
+        <li>
+          <Link
+              className={nextIsDisabled ? "next next--disabled" : "next"}
+              to={`/${nextPage}`}
+          >
+            Далее
+          </Link>
+        </li>
       </ul>
 
     </nav>
