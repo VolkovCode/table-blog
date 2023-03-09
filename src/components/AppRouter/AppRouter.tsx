@@ -1,5 +1,5 @@
-import {Navigate, Route, Routes} from 'react-router-dom';
-import { routes } from '../router/route';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { routes } from "../../router/route";
 
 export const AppRouter = () => {
   return (
